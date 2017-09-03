@@ -10973,7 +10973,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "body{color:#fff;background:skyblue}#app{width:80%;max-width:1200px;margin-left:auto;margin-right:auto}.txt_st{transition:all .3s ease-out;border:none;background:transparent;color:#fff;padding:10px}input[type=range]{-webkit-appearance:none;background:hsla(0,0%,100%,.3);height:10px;width:50%;border-radius:5px}input[type=range]:focus{outline:none}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;background:#fff;width:20px;height:20px;border-radius:50%;cursor:pointer;opacity:.9}", ""]);
+exports.push([module.i, "body{color:#fff;background:skyblue}#app{width:100%;max-width:1200px;margin-left:auto;margin-right:auto}.txt_st{transition:all .3s ease-out;border:none;background:transparent;color:#fff;padding:10px}input[type=range]{-webkit-appearance:none;background:hsla(0,0%,100%,.3);height:10px;width:50%;border-radius:5px}input[type=range]:focus{outline:none}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;background:#fff;width:20px;height:20px;border-radius:50%;cursor:pointer;opacity:.9}", ""]);
 
 // exports
 
