@@ -10571,7 +10571,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -10609,6 +10608,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -10761,6 +10761,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             document.getElementById('sliderWrap').classList.remove('none');
             document.getElementById('color_filter_area').classList.remove('none');
         },
+        reset: function () {
+            return this.fontOpacity = 1, this.grs = 0, this.blr = 0, this.hrt = 0, this.spa = 0, this.brt = 100, this.cnt = 100, this.orangemix = 0, this.bluemix = 0, this.greenmix = 0;
+        },
         gray: function () {
             return this.grs = 100;
         },
@@ -10789,6 +10792,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
 //
 //
 //
@@ -10945,7 +10950,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, ".filterwrap[data-v-2b8b4d89]{background:#333;padding:30px}label[data-v-2b8b4d89]{border:1px solid #fff;padding:10px;cursor:pointer}.image_area[data-v-2b8b4d89]{position:relative;min-height:200px}#fileDrag[data-v-2b8b4d89]{position:absolute;top:0;left:0;width:calc(100% - 80px);height:calc(100% - 80px);max-width:700px;margin:0 auto;padding:30px;box-shadow:0 0 0 transparent;transition:.2s ease;text-align:center;border:5px solid #fff}#fileDrag.hover[data-v-2b8b4d89]{background:rgba(0,0,0,.5);border:5px solid #fff;box-shadow:0 0 0 5px rgba(0,0,0,.15)}img[data-v-2b8b4d89]{max-width:100%}button.active[data-v-2b8b4d89]{border:2px solid red}.addBorder[data-v-2b8b4d89]{filter:inherit!important}#sliderWrap.none[data-v-2b8b4d89]{opacity:.1}.mix[data-v-2b8b4d89]{mix-blend-mode:soft-light;position:absolute;top:0;left:0;width:100%;height:100%;opacity:.5}.mix.blue[data-v-2b8b4d89]{background:blue}.mix.green[data-v-2b8b4d89]{background:green}.mix.orange[data-v-2b8b4d89]{background:orange}#color_filter_area.none[data-v-2b8b4d89]{visibility:hidden}", ""]);
+exports.push([module.i, "[data-v-2b8b4d89]{font-size:.95em}.filterwrap[data-v-2b8b4d89]{background:#333;padding:30px}label[data-v-2b8b4d89]{border:1px solid #fff;padding:10px;cursor:pointer}.image_area[data-v-2b8b4d89]{position:relative;min-height:200px}#fileDrag[data-v-2b8b4d89]{position:absolute;top:0;left:0;width:calc(100% - 80px);height:calc(100% - 80px);max-width:700px;margin:0 auto;padding:30px;box-shadow:0 0 0 transparent;transition:.2s ease;text-align:center;border:5px solid #fff}#fileDrag.hover[data-v-2b8b4d89]{background:rgba(0,0,0,.5);border:5px solid #fff;box-shadow:0 0 0 5px rgba(0,0,0,.15)}img[data-v-2b8b4d89]{max-width:100%}button[data-v-2b8b4d89]{color:#fff;border:1px solid #fff;background:transparent}button.active[data-v-2b8b4d89]{border:2px solid red}.addBorder[data-v-2b8b4d89]{filter:inherit!important}#sliderWrap[data-v-2b8b4d89]{max-height:280px;overflow-y:auto}#sliderWrap.none[data-v-2b8b4d89]{opacity:.1}.mix[data-v-2b8b4d89]{mix-blend-mode:soft-light;position:absolute;top:0;left:0;width:100%;height:100%;opacity:.5}.mix.blue[data-v-2b8b4d89]{background:blue}.mix.green[data-v-2b8b4d89]{background:green}.mix.orange[data-v-2b8b4d89]{background:orange}#color_filter_area.none[data-v-2b8b4d89]{visibility:hidden}", ""]);
 
 // exports
 
@@ -10959,7 +10964,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".textedit_wrap[data-v-32a42cb0]{padding:30px}.txt_st[data-v-32a42cb0]{transition:all .3s ease-out;border:none;background:transparent;color:#fff;padding:10px;width:calc(100% - 20px)}", ""]);
 
 // exports
 
@@ -10973,7 +10978,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "body{color:#fff;background:skyblue}#app{width:100%;max-width:1200px;margin-left:auto;margin-right:auto}.txt_st{transition:all .3s ease-out;border:none;background:transparent;color:#fff;padding:10px}input[type=range]{-webkit-appearance:none;background:hsla(0,0%,100%,.3);height:10px;width:50%;border-radius:5px}input[type=range]:focus{outline:none}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;background:#fff;width:20px;height:20px;border-radius:50%;cursor:pointer;opacity:.9}", ""]);
+exports.push([module.i, "body{color:#fff;background:skyblue;padding:0;margin:0}#app{width:100%;max-width:1200px;margin-left:auto;margin-right:auto}input[type=range]{-webkit-appearance:none;background:hsla(0,0%,100%,.3);height:10px;width:50%;border-radius:5px}input[type=range]:focus{outline:none}input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;background:#fff;width:20px;height:20px;border-radius:50%;cursor:pointer;opacity:.9}", ""]);
 
 // exports
 
@@ -11169,14 +11174,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.original
     }
-  }, [_vm._v("원본 보기")]), _vm._v(" "), _c('button', {
+  }, [_vm._v("원본비교")]), _vm._v(" "), _c('button', {
     attrs: {
       "id": "afterBtn"
     },
     on: {
       "click": _vm.after
     }
-  }, [_vm._v("효과 적용")])]), _vm._v(" "), _c('button', {
+  }, [_vm._v("효과적용")]), _vm._v(" "), _c('button', {
+    attrs: {
+      "id": "resetBtn"
+    },
+    on: {
+      "click": _vm.reset
+    }
+  }, [_vm._v("초기화")])]), _vm._v(" "), _c('button', {
     on: {
       "click": _vm.gray
     }
@@ -11412,7 +11424,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('label', {
+  return _c('div', [_c('div', {
+    staticClass: "textedit_wrap"
+  }, [_c('label', {
     attrs: {
       "for": "font_fm1"
     }
@@ -11488,7 +11502,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.fontType = "nanumGothic"
       }
     }
-  }), _vm._v(" "), _c('p', [_vm._v("작게\n    "), _c('button', {
+  }), _vm._v(" "), _c('p', [_vm._v("작게\n        "), _c('button', {
     on: {
       "click": _vm.dscCnt
     }
@@ -11516,7 +11530,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.addCnt
     }
-  }, [_vm._v("+")]), _vm._v("\n    크게\n    "), _c('input', {
+  }, [_vm._v("+")]), _vm._v("\n        크게\n        "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -11539,7 +11553,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.moveSize = $event.target.value
       }
     }
-  }), _vm._v("px \n    ")]), _vm._v(" "), _c('p', [_vm._v("흐리게\n    "), _c('input', {
+  }), _vm._v("px \n        ")]), _vm._v(" "), _c('p', [_vm._v("흐리게\n        "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -11560,7 +11574,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.fontOpacity = $event.target.value
       }
     }
-  }), _vm._v("\n    선명하게\n    ")]), _vm._v(" "), _c('p', [_vm._v("자간 좁게\n    "), _c('input', {
+  }), _vm._v("\n        선명하게\n        ")]), _vm._v(" "), _c('p', [_vm._v("자간 좁게\n        "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -11581,7 +11595,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.letterSpacing = $event.target.value
       }
     }
-  }), _vm._v("\n    자간 넓게\n    ")]), _vm._v(" "), _c('input', {
+  }), _vm._v("\n        자간 넓게\n        ")]), _vm._v(" "), _c('input', {
     staticClass: "txt_st",
     style: ({
       fontSize: _vm.moveSize + 'px',
@@ -11593,7 +11607,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "type": "text",
       "value": "헬로우 Hello"
     }
-  })])
+  })])])
 },staticRenderFns: []}
 
 /***/ }),
@@ -11654,7 +11668,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "id": "app"
     }
-  }, [_c('photo-filter'), _vm._v(" "), _c('br'), _c('hr'), _c('br'), _vm._v(" "), _c('text-edit'), _vm._v(" "), _c('app-footer')], 1)
+  }, [_c('photo-filter')], 1)
 },staticRenderFns: []}
 
 /***/ }),
