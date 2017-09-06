@@ -10700,6 +10700,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data() {
@@ -10733,13 +10741,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         createImage: function (file) {
             var image, me, reader;
-            image = new Image();
+
+            var canvas = document.getElementById('canvas');
+            var ctx = canvas.getContext('2d');
+
             reader = new FileReader();
             me = this;
             me.uploadfile.name = file.name;
+
             reader.onload = function (e) {
-                return me.uploadfile.image = e.target.result;
+                image = new Image();
+                image.onload = function () {
+                    ctx.drawImage(image, 0, 0);
+                };
+                image.src = e.target.result;
+                //return me.uploadfile.image = e.target.result;
             };
+            //return reader.readAsDataURL(e.target.files[0]);
             return reader.readAsDataURL(file);
         },
         FileDragHover: function (e) {
@@ -10778,6 +10796,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         green: function () {
             return this.greenmix = .2, this.orangemix = 0, this.bluemix = 0;
+        },
+        downs: function () {
+
+            var canvas = document.getElementById('canvas');
+            var ctx1 = canvas.getContext('2d');
+
+            var canvas2 = document.getElementById("canvas2");
+            var ctx2 = canvas2.getContext("2d");
+
+            //down
+            function downloadCanvas(link, canvasId, filename) {
+                var data = canvas2.toDataURL(); //  canvas2 URL
+                var cssFilter = getComputedStyle(canvas).filter; // canvas1 필터 추출
+                ctx2.filter = cssFilter; //2번 canvas에 필터 적용
+                ctx2.drawImage(canvas, 0, 0); //draws the first canvas onto the second one.
+
+                link.href = data;
+                link.download = filename;
+            }
+
+            document.getElementById('downFile').addEventListener('click', function () {
+                downloadCanvas(this, 'canvas2', 'test.png');
+            }, false);
         }
     },
     ready: function () {
@@ -10950,7 +10991,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "[data-v-2b8b4d89]{font-size:.95em}.filterwrap[data-v-2b8b4d89]{background:#333;padding:30px}label[data-v-2b8b4d89]{border:1px solid #fff;padding:10px;cursor:pointer}.image_area[data-v-2b8b4d89]{position:relative;min-height:200px}#fileDrag[data-v-2b8b4d89]{position:absolute;top:0;left:0;width:calc(100% - 80px);height:calc(100% - 80px);max-width:700px;margin:0 auto;padding:30px;box-shadow:0 0 0 transparent;transition:.2s ease;text-align:center;border:5px solid #fff}#fileDrag.hover[data-v-2b8b4d89]{background:rgba(0,0,0,.5);border:5px solid #fff;box-shadow:0 0 0 5px rgba(0,0,0,.15)}img[data-v-2b8b4d89]{max-width:100%}button[data-v-2b8b4d89]{color:#fff;border:1px solid #fff;background:transparent}button.active[data-v-2b8b4d89]{border:2px solid red}.addBorder[data-v-2b8b4d89]{filter:inherit!important}#sliderWrap[data-v-2b8b4d89]{background:#444;padding:10px;max-height:500px;overflow-y:auto}@media screen and (max-width:380px){#sliderWrap[data-v-2b8b4d89]{max-height:260px}}#sliderWrap.none[data-v-2b8b4d89]{opacity:.1}.mix[data-v-2b8b4d89]{mix-blend-mode:soft-light;position:absolute;top:0;left:0;width:100%;height:100%;opacity:.5}.mix.blue[data-v-2b8b4d89]{background:blue}.mix.green[data-v-2b8b4d89]{background:green}.mix.orange[data-v-2b8b4d89]{background:orange}#color_filter_area.none[data-v-2b8b4d89]{visibility:hidden}", ""]);
+exports.push([module.i, "[data-v-2b8b4d89]{font-size:.95em}.filterwrap[data-v-2b8b4d89]{background:#333;padding:30px}label[data-v-2b8b4d89]{border:1px solid #fff;padding:10px;cursor:pointer}.image_area[data-v-2b8b4d89]{position:relative;min-height:200px}#fileDrag[data-v-2b8b4d89]{position:absolute;top:0;left:0;width:calc(100% - 80px);height:calc(100% - 80px);max-width:700px;margin:0 auto;padding:30px;box-shadow:0 0 0 transparent;transition:.2s ease;text-align:center;border:5px solid #fff}#fileDrag.hover[data-v-2b8b4d89]{background:rgba(0,0,0,.5);border:5px solid #fff;box-shadow:0 0 0 5px rgba(0,0,0,.15)}img[data-v-2b8b4d89]{max-width:100%}button[data-v-2b8b4d89]{color:#fff;border:1px solid #fff;background:transparent}button.active[data-v-2b8b4d89]{border:2px solid red}.addBorder[data-v-2b8b4d89]{filter:inherit!important}#sliderWrap[data-v-2b8b4d89]{background:#444;padding:10px;max-height:500px;overflow-y:auto}@media screen and (max-width:380px){#sliderWrap[data-v-2b8b4d89]{max-height:260px}}#sliderWrap.none[data-v-2b8b4d89]{opacity:.1}.mix[data-v-2b8b4d89]{mix-blend-mode:soft-light;position:absolute;top:0;left:0;width:100%;height:100%;opacity:.5}.mix.blue[data-v-2b8b4d89]{background:blue}.mix.green[data-v-2b8b4d89]{background:green}.mix.orange[data-v-2b8b4d89]{background:orange}#color_filter_area.none[data-v-2b8b4d89]{visibility:hidden}#canvas2[data-v-2b8b4d89]{visibility:hidden;width:0;height:0;overflow:hidden}", ""]);
 
 // exports
 
@@ -11127,17 +11168,37 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "change": _vm.onFileChange
     }
-  }), _vm._v(" "), _c('div', {
+  }), _vm._v(" "), _c('a', {
+    attrs: {
+      "href": "#",
+      "id": "downFile"
+    },
+    on: {
+      "click": _vm.downs
+    }
+  }, [_vm._v("Down")]), _vm._v(" "), _c('div', {
     staticClass: "image_area"
-  }, [_c('img', {
+  }, [_c('canvas', {
     staticClass: "upload-img",
     style: ({
       opacity: _vm.fontOpacity,
       filter: 'grayscale(' + _vm.grs + '%) blur(' + _vm.blr + 'px) hue-rotate(' + _vm.hrt + 'deg) sepia(' + _vm.spa + '%) brightness(' + _vm.brt + '%) contrast(' + _vm.cnt + '%)'
     }),
     attrs: {
-      "id": "imgs",
+      "id": "canvas",
+      "width": "300",
+      "height": "200",
       "src": _vm.uploadfile.image
+    }
+  }, [_c('img', {
+    attrs: {
+      "id": "imgs"
+    }
+  })]), _vm._v(" "), _c('canvas', {
+    attrs: {
+      "id": "canvas2",
+      "width": "300",
+      "height": "200"
     }
   }), _vm._v(" "), _c('div', {
     attrs: {
